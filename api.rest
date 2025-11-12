@@ -1,0 +1,11 @@
+@baseURL = {{$dotenv BASE_URL}}
+@apikey = {{$dotenv API_KEY}}
+
+POST {{baseURL}} HTTP/1.1
+x-api-key: {{apikey}}
+Content-Type: application/json
+
+{
+    "text": "Speaker 0: Olá, eu sou o Cody!\nSpeaker 1: E eu sou o Felippe!",
+    "voices": ["Cody", "Felippe"]
+}
