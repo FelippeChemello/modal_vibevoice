@@ -84,11 +84,10 @@ class TTSRequest(BaseModel):
     voices: List[str]
 
 @app.cls(
-    gpu='A10',
+    gpu='L40S',
     image=image,
     timeout=600,
     secrets=[modal.Secret.from_name("vibevoice-secret")],
-    # **mesmo volume, mesmo path**
     volumes={CACHE_DIR: hf_cache},
 )
 class Model:
